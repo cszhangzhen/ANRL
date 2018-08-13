@@ -80,10 +80,16 @@ As for simulating random walks, we directly use the code provided in [node2vec](
 ## Citing
 If you find ANRL useful for your research, please consider citing the following paper:
 ```
-@inproceedings{anrl-ijcai2018,
-	author={Zhen Zhang, Hongxia Yang, Jiajun Bu, Sheng Zhou, Pinggang Yu, Jianwei Zhang, Martin Ester, Can Wang},
-	title={ANRL: Attributed Network Representation Learning via Deep Neural Networks},
-	booktitle={IJCAI-18},
-	year={2018}
+@inproceedings{ijcai2018-438,
+  title     = {ANRL: Attributed Network Representation Learning via Deep Neural Networks},
+  author    = {Zhen Zhang and Hongxia Yang and Jiajun Bu and Sheng Zhou and Pinggang Yu and Jianwei Zhang and Martin Ester and Can Wang},
+  booktitle = {Proceedings of the Twenty-Seventh International Joint Conference on
+               Artificial Intelligence, {IJCAI-18}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},             
+  pages     = {3155--3161},
+  year      = {2018},
+  month     = {7},
+  doi       = {10.24963/ijcai.2018/438},
+  url       = {https://doi.org/10.24963/ijcai.2018/438},
 }
 ``` 
