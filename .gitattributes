@@ -1,1 +1,5 @@
 *.py linguist-language=python
+*.feature linguist-language=python
+*.label linguist-language=python
+*.edgelist linguist-language=python
+*.embed linguist-language=python
