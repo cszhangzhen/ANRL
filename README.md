@@ -4,6 +4,7 @@ ANRL: Attributed Network Representation Learning via Deep Neural Networks (IJCAI
 This is a Tensorflow implementation of the ANRL algorithm, which learns a low-dimensional representations for each node in a network. Specifically, ANRL consists of two modules, i.e., neighbor enhancement autoencoder and attribute-aware skip-gram model, to jointly capture the node attribute proximity and network topology proximity.
 
 ## Requirements
+* python2.7 or python3.6
 * tensorflow
 * networkx
 * numpy
