@@ -1,5 +1,5 @@
 # Leverage Node2vec for random walks
-
+from __future__ import print_function
 import numpy as np
 import networkx as nx
 import random
@@ -43,9 +43,9 @@ class Graph():
         G = self.G
         walks = []
         nodes = list(G.nodes())
-        print 'simulating random walk...'
+        print('simulating random walk...')
         for walk_iter in range(num_walks):
-            print str(walk_iter+1), '/', str(num_walks)
+            print(str(walk_iter + 1), '/', str(num_walks))
             random.shuffle(nodes)
             for node in nodes:
                 walks.append(self.node2vec_walk(
@@ -63,14 +63,14 @@ class Graph():
         unnormalized_probs = []
         for dst_nbr in sorted(G.neighbors(dst)):
             if dst_nbr == src:
-                unnormalized_probs.append(G[dst][dst_nbr]['weight']/p)
+                unnormalized_probs.append(G[dst][dst_nbr]['weight'] / p)
             elif G.has_edge(dst_nbr, src):
                 unnormalized_probs.append(G[dst][dst_nbr]['weight'])
             else:
-                unnormalized_probs.append(G[dst][dst_nbr]['weight']/q)
+                unnormalized_probs.append(G[dst][dst_nbr]['weight'] / q)
         norm_const = sum(unnormalized_probs)
         normalized_probs = [
-            float(u_prob)/norm_const for u_prob in unnormalized_probs]
+            float(u_prob) / norm_const for u_prob in unnormalized_probs]
 
         return alias_setup(normalized_probs)
 
@@ -87,7 +87,7 @@ class Graph():
                                   for nbr in sorted(G.neighbors(node))]
             norm_const = sum(unnormalized_probs)
             normalized_probs = [
-                float(u_prob)/norm_const for u_prob in unnormalized_probs]
+                float(u_prob) / norm_const for u_prob in unnormalized_probs]
             alias_nodes[node] = alias_setup(normalized_probs)
 
         alias_edges = {}
@@ -117,7 +117,7 @@ def alias_setup(probs):
     smaller = []
     larger = []
     for kk, prob in enumerate(probs):
-        q[kk] = K*prob
+        q[kk] = K * prob
         if q[kk] < 1.0:
             smaller.append(kk)
         else:
@@ -143,7 +143,7 @@ def alias_draw(J, q):
     '''
     K = len(J)
 
-    kk = int(np.floor(np.random.rand()*K))
+    kk = int(np.floor(np.random.rand() * K))
     if np.random.rand() < q[kk]:
         return kk
     else:
