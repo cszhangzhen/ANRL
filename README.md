@@ -39,7 +39,7 @@ node_1 label_1
 node_2 label_2
 ...
 ```
-For link predictin, each dataset contains 3 files: training edgelist, features and test edgelist.
+For link prediction, each dataset contains 3 files: training edgelist, features and test edgelist.
 ```
 1. xxx_train.edgelist: each line contains two connected nodes.
 node_1 node_2
