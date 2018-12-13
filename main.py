@@ -73,10 +73,10 @@ def construct_traget_neighbors(nx_G, X, FLAGS, mode='WAN'):
             if len(neighbors) == 0:
                 X_target[node] = X[node]
             else:
-                temp = X[node]
+                temp = np.array(X[node])
                 for n in neighbors:
                     if FLAGS.weighted:
-                        # weighted
+                        # weighted sum
                         # temp = np.vstack((temp, X[n] * edgeWeight))
                         pass
                     else:
@@ -91,11 +91,11 @@ def construct_traget_neighbors(nx_G, X, FLAGS, mode='WAN'):
             if len(neighbors) == 0:
                 X_target[node] = X[node]
             else:
-                temp = X[node]
+                temp = np.array(X[node])
                 for n in neighbors:
                     if FLAGS.weighted:
                         # weighted sum
-                        # temp += X[n] * edgeWeight
+                        # temp = np.vstack((temp, X[n] * edgeWeight))
                         pass
                     else:
                         temp = np.vstack((temp, X[n]))
