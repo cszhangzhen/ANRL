@@ -77,8 +77,7 @@ def construct_traget_neighbors(nx_G, X, FLAGS, mode='WAN'):
                 for n in neighbors:
                     if FLAGS.weighted:
                         # weighted sum
-                        # temp = np.vstack((temp, X[n] * edgeWeight))
-                        pass
+                        temp = np.vstack((temp, X[n] * nx_G[node][n]['weight']))
                     else:
                         temp = np.vstack((temp, X[n]))
                 temp = np.median(temp, axis=0)
@@ -95,8 +94,7 @@ def construct_traget_neighbors(nx_G, X, FLAGS, mode='WAN'):
                 for n in neighbors:
                     if FLAGS.weighted:
                         # weighted sum
-                        # temp = np.vstack((temp, X[n] * edgeWeight))
-                        pass
+                        temp = np.vstack((temp, X[n] * nx_G[node][n]['weight']))
                     else:
                         temp = np.vstack((temp, X[n]))
                 temp = np.mean(temp, axis=0)

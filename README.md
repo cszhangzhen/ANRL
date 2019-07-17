@@ -22,8 +22,8 @@ pip install -r requirements.txt
 For node classification, each dataset contains 3 files: edgelist, features and labels.
 ```
 1. citeseer.edgelist: each line contains two connected nodes.
-node_1 node_2
-node_2 node_3
+node_1 node_2 (weight)
+node_2 node_3 (weight)
 ...
 
 2. citeseer.feature: this file has n+1 lines.
@@ -42,8 +42,8 @@ node_2 label_2
 For link prediction, each dataset contains 3 files: training edgelist, features and test edgelist.
 ```
 1. xxx_train.edgelist: each line contains two connected nodes.
-node_1 node_2
-node_2 node_3
+node_1 node_2 (weight)
+node_2 node_3 (weight)
 ...
 
 2. xxx.feature: this file has n+1 lines.
